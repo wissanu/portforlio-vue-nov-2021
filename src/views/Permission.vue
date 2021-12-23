@@ -1,6 +1,6 @@
 <template>
-  <div class="test">
-    <Header text="test pages"/>
+  <div class="Permission">
+    <Header text="Permission pages"/>
   </div>
 </template>
 
@@ -13,5 +13,5 @@ import Header from '@/components/Header.vue'; // @ is an alias to /src
     Header,
   },
 })
-export default class Test extends Vue {}
+export default class Permission extends Vue {}
 </script>
