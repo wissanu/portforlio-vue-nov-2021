@@ -40,7 +40,11 @@
   </div>
 
   <!-- chart list -->
-  
+  <div class="graphBox">
+    <!-- <h2>ผลประกอบการประจำวัน</h2> -->
+    <div class="box"><Testchart /></div>
+    <div class="box"><Testchart /></div>
+  </div>
 
   <!-- data list -->
   <div class="details">
@@ -164,11 +168,11 @@
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import Testchart from '@/components/Testchart.vue';
 
 @Options({
   components: {
-    HelloWorld,
+    Testchart
   },
 })
 export default class Dashboard extends Vue {}
@@ -222,6 +226,29 @@ export default class Dashboard extends Vue {}
 .cardBox .card:hover .iconBx,
 .cardBox .card:hover .cardName {
   color: var(--white);
+}
+
+/* chart css */
+
+.graphBox
+{
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+  min-height: 200px;
+  overflow-x: auto;
+}
+
+.graphBox .box {
+  /* position: relative; */
+  background: #fff;
+  padding: 20px;
+  width: 100%;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
 }
 
 .details {
@@ -404,10 +431,15 @@ export default class Dashboard extends Vue {}
   color: var(--white);
 }
 
+
 /* responsive design */
 @media (max-width: 991px) {
   .cardBox{
     grid-template-columns: repeat(2, 1fr);
+  }
+  .graphBox {
+    grid-template-columns: 1fr;
+    height: auto;
   }
 
 }
