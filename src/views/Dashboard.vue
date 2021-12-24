@@ -39,6 +39,9 @@
     </div>
   </div>
 
+  <!-- chart list -->
+  
+
   <!-- data list -->
   <div class="details">
     <div class="recentOrders">
