@@ -12,7 +12,7 @@ export default defineComponent({
            labels: ['ช่วงเช้า', 'ช่วงกลางวัน', 'ช่วงเย็น'],
             datasets: [
               {
-                label: 'จำนวนแก้วที่ขายได้',
+                label: 'จำนวนแก้วที่ขายได้ ณ วันนี้',
                 backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -24,7 +24,8 @@ export default defineComponent({
         },
         chartOptions: {
           responsive: true,
-          maintainAspectRatio: true,
+        //   aspectRatio: 0,
+        //   maintainAspectRatio: true,
         //   layout: {
         //       padding: 20
         //   },

@@ -43,7 +43,7 @@
   <div class="graphBox">
     <!-- <h2>ผลประกอบการประจำวัน</h2> -->
     <div class="box"><Testchart /></div>
-    <div class="box"><Testchart /></div>
+    <div class="box"><Stestchart /></div>
   </div>
 
   <!-- data list -->
@@ -169,10 +169,12 @@
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
 import Testchart from '@/components/Testchart.vue';
+import Stestchart from '@/components/Stestchart.vue';
 
 @Options({
   components: {
-    Testchart
+    Testchart,
+    Stestchart
   },
 })
 export default class Dashboard extends Vue {}
@@ -243,7 +245,7 @@ export default class Dashboard extends Vue {}
 }
 
 .graphBox .box {
-  /* position: relative; */
+  position: relative;
   background: #fff;
   padding: 20px;
   width: 100%;
