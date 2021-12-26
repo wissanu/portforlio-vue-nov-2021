@@ -11,19 +11,25 @@
         <li :class="{hovered : position.third_link}">
           <router-link to="/" id="nav" @click="ThirdLink()">
             <span class="icon"> <ion-icon name="podium-outline"></ion-icon> </span>
-            <span class="title">Dashboard</span>
+            <span class="title">ข้อมูลสรุปการขาย</span>
           </router-link>
         </li>
-        <li :class="{hovered : position.first_link}">
-          <router-link to="/about" id="nav" @click="FirstLink()">
-            <span class="icon"> <ion-icon name="clipboard-outline"></ion-icon> </span>
-            <span class="title">Product</span>
+        <li :class="{hovered : position.fourth_link}">
+          <router-link to="/datamanipulate" id="nav" @click="FourthLink()">
+            <span class="icon"> <ion-icon name="bag-handle-outline"></ion-icon> </span>
+            <span class="title">การจัดการข้อมูลสินค้า</span>
           </router-link>
         </li>
         <li :class="{hovered : position.second_link}">
           <router-link to="/permission" id="nav" @click="SecondLink()">
             <span class="icon"> <ion-icon name="lock-closed-outline"></ion-icon> </span>
-            <span class="title">Permission</span>
+            <span class="title">การกำหนดสิทธิ์</span>
+          </router-link>
+        </li>
+        <li :class="{hovered : position.first_link}">
+          <router-link to="/about" id="nav" @click="FirstLink()">
+            <span class="icon"> <ion-icon name="help-circle-outline"></ion-icon> </span>
+            <span class="title">เกี่ยวกับเรา</span>
           </router-link>
         </li>
       </ul>
@@ -38,7 +44,7 @@
         <!-- search bar -->
         <div class="search">
           <label>
-            <input type="text" placeholder="Search here">
+            <input type="text" placeholder="ค้นหา...">
             <ion-icon name="search-outline"></ion-icon>
           </label>
         </div>
@@ -66,6 +72,7 @@ export default {
        {first_link : false},
        {second_link : false},
        {third_link : false},
+       {fourth_link : false},
      ]
      
     }
@@ -78,16 +85,25 @@ export default {
       this.position.first_link = true;
       this.position.second_link = false;
       this.position.third_link = false;
+      this.position.fourth_link = false;
     },
     SecondLink() {
       this.position.first_link = false;
       this.position.second_link = true;
       this.position.third_link = false;
+      this.position.fourth_link = false;
     },
     ThirdLink() {
       this.position.first_link = false;
       this.position.second_link = false;
       this.position.third_link = true;
+      this.position.fourth_link = false;
+    },
+    FourthLink() {
+      this.position.first_link = false;
+      this.position.second_link = false;
+      this.position.third_link = false;
+      this.position.fourth_link = true;
     }
   }
 }

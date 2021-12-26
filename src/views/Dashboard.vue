@@ -3,26 +3,8 @@
   <div class="cardBox">
     <div class="card">
       <div>
-        <div class="numbers">1,504</div>
-        <div class="cardName">Customer Count</div>
-      </div>
-      <div class="iconBx">
-        <ion-icon name="eye-outline"></ion-icon>
-      </div>
-    </div>
-    <div class="card">
-      <div>
-        <div class="numbers">1,504</div>
-        <div class="cardName">Customer Count</div>
-      </div>
-      <div class="iconBx">
-        <ion-icon name="chatbubbles-outline"></ion-icon>
-      </div>
-    </div>
-    <div class="card">
-      <div>
-        <div class="numbers">1,504</div>
-        <div class="cardName">Customer Count</div>
+        <div class="numbers">1,500 ชิ้น</div>
+        <div class="cardName">จำนวนที่ขายได้วันนี้ </div>
       </div>
       <div class="iconBx">
         <ion-icon name="cart-outline"></ion-icon>
@@ -30,11 +12,29 @@
     </div>
     <div class="card">
       <div>
-        <div class="numbers">1,504</div>
-        <div class="cardName">Customer Count</div>
+        <div class="numbers">6,200 บาท</div>
+        <div class="cardName">รายได้สุทธิของวันนี้</div>
       </div>
       <div class="iconBx">
         <ion-icon name="cash-outline"></ion-icon>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <div class="numbers">2,000 บาท</div>
+        <div class="cardName">ต้นทุนที่ใช้ของวันนี้</div>
+      </div>
+      <div class="iconBx">
+        <ion-icon name="cash-outline"></ion-icon>
+      </div>
+    </div>
+    <div class="card">
+      <div>
+        <div class="numbers">200 คน</div>
+        <div class="cardName">จำนวนลูกค้าวันนี้</div>
+      </div>
+      <div class="iconBx">
+        <ion-icon name="accessibility-outline"></ion-icon>
       </div>
     </div>
   </div>
@@ -50,16 +50,16 @@
   <div class="details">
     <div class="recentOrders">
       <div class="cardHeader">
-        <h2>Recents Order</h2>
-        <a href="#" class="btn">View all</a>
+        <h2>สินค้าที่สั่งซื้อล่าสุด</h2>
+        <a href="#" class="btn">ดูทั้งหมด</a>
       </div>
       <table>
         <thead>
           <tr>
-            <td>Name</td>
-            <td>Price</td>
-            <td>Payments</td>
-            <td>Status</td>
+            <td>ชื่อสินค้า</td>
+            <td>ราคา</td>
+            <td>จำนวน</td>
+            <td>ช่องทางการชำระ</td>
           </tr>
         </thead>
         <tbody>
@@ -67,13 +67,13 @@
             <td>Bubble Tea</td>
             <td>19.00 baht</td>
             <td>Paid</td>
-            <td><span class="status return">Return</span></td>
+            <td><span class="status return">เงินสด</span></td>
           </tr>
           <tr>
             <td>Bubble Tea</td>
             <td>19.00 baht</td>
             <td>Paid</td>
-            <td><span class="status delivered">Delivered</span></td>
+            <td><span class="status delivered">แสกนจ่าย</span></td>
           </tr>
           <tr>
             <td>Bubble Tea</td>
@@ -130,12 +130,12 @@
     <!-- recent Customer -->
     <div class="recentCustomers">
       <div class="cardHeader">
-        <h2>Recent Customer</h2>
+        <h2>สมาชิกใหม่</h2>
       </div>
       <table>
         <tr>
           <td width="60px"><div class="imgBx"><img src="../assets/logo.png" alt=""></div></td>
-          <td><h4>Tor <br><span>Thailand</span></h4></td>
+          <td><h4>วิษณุ ถึงรัตน์ <br><span>เบอร์โทร : 089-934-0993</span></h4></td>
         </tr>
         <tr>
           <td width="60px"><div class="imgBx"><img src="../assets/logo.png" alt=""></div></td>

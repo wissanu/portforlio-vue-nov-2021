@@ -18,7 +18,12 @@ const routes = [
   {
     path: '/permission',
     name: 'Permission',
-    component: () => import(/* webpackChunkName: "about" */'@/views/Permission.vue')
+    component: () => import('@/views/Permission.vue')
+  },
+  {
+    path: '/datamanipulate',
+    name: 'DataManipulate',
+    component: () => import('@/views/DataManipulate.vue')
   }
 ]
 
