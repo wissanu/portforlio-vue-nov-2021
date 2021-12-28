@@ -9,7 +9,7 @@
           </router-link>
         </li>
         <li :class="{hovered : position.third_link}">
-          <router-link to="/" id="nav" @click="ThirdLink()">
+          <router-link to="/dashboard" id="nav" @click="ThirdLink()">
             <span class="icon"> <ion-icon name="podium-outline"></ion-icon> </span>
             <span class="title">ข้อมูลสรุปการขาย</span>
           </router-link>
@@ -18,6 +18,12 @@
           <router-link to="/datamanipulate" id="nav" @click="FourthLink()">
             <span class="icon"> <ion-icon name="bag-handle-outline"></ion-icon> </span>
             <span class="title">การจัดการข้อมูลสินค้า</span>
+          </router-link>
+        </li>
+        <li :class="{hovered : position.fifth_link}">
+          <router-link to="/usermanipulate" id="nav" @click="FifthLink()">
+            <span class="icon"> <ion-icon name="person-outline"></ion-icon> </span>
+            <span class="title">การจัดการข้อมูลสมาชิก</span>
           </router-link>
         </li>
         <li :class="{hovered : position.second_link}">
@@ -73,6 +79,7 @@ export default {
        {second_link : false},
        {third_link : false},
        {fourth_link : false},
+       {fifth_link : false},
      ]
      
     }
@@ -86,24 +93,35 @@ export default {
       this.position.second_link = false;
       this.position.third_link = false;
       this.position.fourth_link = false;
+      this.position.fifth_link = false;
     },
     SecondLink() {
       this.position.first_link = false;
       this.position.second_link = true;
       this.position.third_link = false;
       this.position.fourth_link = false;
+      this.position.fifth_link = false;
     },
     ThirdLink() {
       this.position.first_link = false;
       this.position.second_link = false;
       this.position.third_link = true;
       this.position.fourth_link = false;
+      this.position.fifth_link = false;
     },
     FourthLink() {
       this.position.first_link = false;
       this.position.second_link = false;
       this.position.third_link = false;
       this.position.fourth_link = true;
+      this.position.fifth_link = false;
+    },
+    FifthLink(){
+      this.position.first_link = false;
+      this.position.second_link = false;
+      this.position.third_link = false;
+      this.position.fourth_link = false;
+      this.position.fifth_link = true;
     }
   }
 }
@@ -223,6 +241,7 @@ body {
   background: transparent;
   border-radius: 50%;
   box-shadow: 35px 35px 0 10px var(--white);
+  /* box-shadow: 35px -35px 5px 5px var(--white); */
   pointer-events: none;
 }
 .navigation ul li:hover a::after,
@@ -235,7 +254,8 @@ body {
   height: 50px;
   background: transparent;
   border-radius: 50%;
-  box-shadow: 35px -35px 0 10px var(--white);
+  /* box-shadow: 35px -35px 0 10px var(--white); */
+  box-shadow: 25px -25px 0px 5px var(--white);
   pointer-events: none;
 }
 

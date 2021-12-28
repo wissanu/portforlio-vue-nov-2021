@@ -1,27 +1,56 @@
 <template>
   <div class="product">
-    <h2>เพิ่มข้อมูลสินค้าใหม่</h2>
-    <!-- create new products -->
     <h2>ข้อมูลสินค้า</h2>
-    <div class="product-container">
-      <div class="product-card" v-for="product in products" :key="product.id">
-        <div class="pro-img">
-          <img src="../assets/shanom.png" alt="">
-        </div>
-        <div class="pro-tex">
-          <p><b><u>{{product.title}}</u></b></p>
-        </div>
-        <div class="pro-content">
-          <p>ราคา:</p> <input type="text" :value="product.price">
-          <p>คงเหลือ:</p> <input type="text" :value="product.remaining">
-          <p>ราคาต้นทุน:</p> <input type="text" :value="product.cost">
+    <form>
+      <div class="product-container">
+        <div class="product-card" v-for="product in products" :key="product.id">
+          <div class="pro-img">
+            <img src="../assets/shanom.png" alt="">
+          </div>
+          <div class="pro-tex">
+            <p><b><u>{{product.title}}</u></b></p>
+          </div>
+          <div class="pro-content">
+            <p>ราคา:</p> <input type="text" :value="product.price">
+            <p>คงเหลือ:</p> <input type="text" :value="product.remaining">
+            <p>ราคาต้นทุน:</p> <input type="text" :value="product.cost">
+          </div>
         </div>
       </div>
-    </div>
-    <div class="updateBtn">
-      <!-- <button class="learn-more">อัพเดทข้อมูล</button> -->
-      <button>อัพเดทข้อมูล</button>
-    </div>
+      <div class="updateBtn">
+        <!-- <button class="learn-more">อัพเดทข้อมูล</button> -->
+        <button>อัพเดทข้อมูล</button>
+      </div>
+    </form>
+
+    <h2 style="padding-top: 20px">เพิ่มข้อมูลสินค้าใหม่</h2>
+    <!-- create new products -->
+    <form>
+      <ul class="wrapper">
+        <li class="form-row">
+          <label for="name">ชื่อสินค้า</label>
+          <input type="text" id="name">
+        </li>
+        <li class="form-row">
+          <label for="ืname">ราคา</label>
+          <input type="text" id="price">
+        </li>
+        <li class="form-row">
+          <label for="email">จำนวนสินค้าในสต็อก</label>
+          <input type="text" id="stock">
+        </li>
+        <li class="form-row">
+          <label for="email">ราคาต้นทุน</label>
+          <input type="text" id="cost">
+        </li>
+        <li class="form-row">
+          <div class="updateBtn">
+            <button type="submit">ยืนยัน</button>
+          </div>
+          <!-- <button type="submit">ยืนยัน</button> -->
+        </li>
+      </ul>
+    </form>
   </div>
 </template>
 
@@ -154,6 +183,7 @@ export default class DataManipulate extends Vue {}
      object-fit: cover;
   width: 100%;
   height: 100%;
+  padding: 20px;
 }
 
 .pro-tex {
@@ -195,61 +225,6 @@ input[type=text]:focus{
 .updateBtn {
   padding: 20px 0 20px 0;
 }
-/* 
-.updateBtn button {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  border: 0;
-  vertical-align: middle;
-  text-decoration: none;
-  font-size: inherit;
-  font-family: inherit;
-  width: 15%;
-}
-button.learn-more {
-  font-weight: 600;
-  color: #fff;
-  text-transform: uppercase;
-  padding: 1.25em 2em;
-  background: #287bff;
-  border: 2px solid #4389f2;
-  border-radius: 0.75em;
-  transform-style: preserve-3d;
-  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
-}
-button.learn-more::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #3d8aff;
-  border-radius: inherit;
-  box-shadow: 0 0 0 2px #9ac0f9, 0 0.625em 0 0 #9ac0f9;
-  transform: translate3d(0, 0.75em, -1em);
-  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
-}
-button.learn-more:hover {
-  background: #4389f2;
-  transform: translate(0, 0.25em);
-}
-button.learn-more:hover::before {
-  box-shadow: 0 0 0 2px #7caef9, 0 0.5em 0 0 #8cb5f2;
-  transform: translate3d(0, 0.5em, -1em);
-}
-button.learn-more:active {
-  background: #0c69f4;
-  transform: translate(0em, 0.75em);
-}
-button.learn-more:active::before {
-  box-shadow: 0 0 0 2px #7caef9, 0 0 #8cb5f2;
-  transform: translate3d(0, 0, -1em);
-} */
 
 .updateBtn button {
   position: relative;
@@ -272,6 +247,35 @@ button.learn-more:active::before {
   background: #085ad6;
 }
 
+.wrapper {
+    background-color: var(--white);
+    list-style-type: none;
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+    border-radius: 20px;
+    margin: 40px 0;
+  }
+  .form-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: .5em;
+  }
+  .form-row > label {
+    padding: .5em 1em .5em 0;
+    flex: 1;
+  }
+  .form-row > input {
+    flex: 2;
+  }
+  .form-row > input,
+  .form-row > button {
+    padding: .5em;
+  }
+  .form-row > button {
+   background: gray;
+   color: white;
+   border: 0;
+  }
 
 
 @media (max-width: 991px){
@@ -285,6 +289,7 @@ button.learn-more:active::before {
   .pro-content p {
     font-size: 14px;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -298,6 +303,7 @@ button.learn-more:active::before {
   .pro-content p {
     font-size: 14px;
   }
+
 }
 
 @media (max-width: 480px) {

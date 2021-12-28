@@ -3,7 +3,7 @@ import Dashboard from '@/views/Dashboard.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/dashboard',
     name: 'Dashboard',
     component: Dashboard
   },
@@ -24,6 +24,11 @@ const routes = [
     path: '/datamanipulate',
     name: 'DataManipulate',
     component: () => import('@/views/DataManipulate.vue')
+  },
+  {
+    path: '/usermanipulate',
+    name: 'UserManipulate',
+    component: () => import('@/views/UserManipulate.vue')
   }
 ]
 
