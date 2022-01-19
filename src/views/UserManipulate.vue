@@ -3,7 +3,7 @@
     <div class="User-spliter">
       <div class="left-panel">
         <h2>ข้อมูลลูกค้า</h2>
-        <form>
+        <!-- <form> -->
           <div class="urdetails">
             <div class="usertable">
               <table>
@@ -42,7 +42,7 @@
             <!-- <button class="learn-more">อัพเดทข้อมูล</button> -->
             <button>อัพเดทข้อมูล</button>
           </div>
-        </form>
+        <!-- </form> -->
       </div>
       <div class="right-panel">
         <h2>เพิ่มผู้ใช้งาน</h2>
@@ -132,14 +132,17 @@ import Header from '@/components/Header.vue';
     AddData(){
       // convert datatype using operator
       // and push new data to array
-      let idx = this.users.length + 1;
-      this.users.push({
-        id: idx,
-        name: ""+this.firstnames,
-        lastname: ""+this.lastnames,
-        phonenumber: ""+this.phonenumbers,
-        on: false
-      });
+      if(this.firstnames != "" && this.lastnames != "" && this.phonenumbers != "")
+      {
+        let idx = this.users.length + 1;
+        this.users.push({
+          id: idx,
+          name: ""+this.firstnames,
+          lastname: ""+this.lastnames,
+          phonenumber: ""+this.phonenumbers,
+          on: false
+        });
+      }
       // reset data for two-way-binding
       this.firstnames = "";
       this.lastnames = "";
