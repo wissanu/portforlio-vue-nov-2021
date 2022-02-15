@@ -3,6 +3,7 @@
     <div class="User-spliter">
       <div class="left-panel">
         <h2>ข้อมูลลูกค้า</h2>
+        <h2></h2>
         <!-- <form> -->
         <div class="urdetails">
           <div class="usertable">
@@ -60,28 +61,28 @@
       </div>
       <div class="right-panel">
         <h2>เพิ่มผู้ใช้งาน</h2>
-        <form>
-          <ul class="wrapper">
-            <li class="form-row">
-              <label for="name">ชื่อ</label>
-              <input type="text" id="name" v-model="firstnames" />
-            </li>
-            <li class="form-row">
-              <label for="ืname">นามสกุล</label>
-              <input type="text" id="lastname" v-model="lastnames" />
-            </li>
-            <li class="form-row">
-              <label for="ืname">เบอร์โทร</label>
-              <input type="text" id="phonenumber" v-model="phonenumbers" />
-            </li>
-            <li class="form-row">
-              <div class="updateBtn">
-                <button @click="AddData()">ยืนยัน</button>
-              </div>
-              <!-- <button type="submit">ยืนยัน</button> -->
-            </li>
-          </ul>
-        </form>
+        <!-- <form> -->
+        <ul class="wrapper">
+          <li class="form-row">
+            <label for="name">ชื่อ</label>
+            <input type="text" id="name" v-model="firstnames" />
+          </li>
+          <li class="form-row">
+            <label for="ืname">นามสกุล</label>
+            <input type="text" id="lastname" v-model="lastnames" />
+          </li>
+          <li class="form-row">
+            <label for="ืname">เบอร์โทร</label>
+            <input type="text" id="phonenumber" v-model="phonenumbers" />
+          </li>
+          <li class="form-row">
+            <div class="updateBtn">
+              <button @click="AddData()">ยืนยัน</button>
+            </div>
+            <!-- <button type="submit">ยืนยัน</button> -->
+          </li>
+        </ul>
+        <!-- </form> -->
       </div>
     </div>
   </div>

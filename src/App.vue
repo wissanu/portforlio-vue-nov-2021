@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="navigation" :class="{active : toggle_nav}">
+    <div class="navigation" :class="{ active: toggle_nav }">
       <ul>
         <li>
           <router-link to="" id="nav">
@@ -8,40 +8,50 @@
             <span class="title">POS-TOR</span>
           </router-link>
         </li>
-        <li :class="{hovered : position.third_link}">
-          <router-link to="/dashboard" id="nav" @click="ThirdLink()">
-            <span class="icon"> <ion-icon name="podium-outline"></ion-icon> </span>
+        <li :class="{ hovered: position.third_link }">
+          <router-link to="/" id="nav" @click="ThirdLink()">
+            <span class="icon">
+              <ion-icon name="podium-outline"></ion-icon>
+            </span>
             <span class="title">ข้อมูลสรุปการขาย</span>
           </router-link>
         </li>
-        <li :class="{hovered : position.fourth_link}">
+        <li :class="{ hovered: position.fourth_link }">
           <router-link to="/datamanipulate" id="nav" @click="FourthLink()">
-            <span class="icon"> <ion-icon name="bag-handle-outline"></ion-icon> </span>
+            <span class="icon">
+              <ion-icon name="bag-handle-outline"></ion-icon>
+            </span>
             <span class="title">การจัดการข้อมูลสินค้า</span>
           </router-link>
         </li>
-        <li :class="{hovered : position.fifth_link}">
+        <li :class="{ hovered: position.fifth_link }">
           <router-link to="/usermanipulate" id="nav" @click="FifthLink()">
-            <span class="icon"> <ion-icon name="person-outline"></ion-icon> </span>
+            <span class="icon">
+              <ion-icon name="person-outline"></ion-icon>
+            </span>
             <span class="title">การจัดการข้อมูลสมาชิก</span>
           </router-link>
         </li>
-        <li :class="{hovered : position.second_link}">
+        <li :class="{ hovered: position.second_link }">
           <router-link to="/permission" id="nav" @click="SecondLink()">
-            <span class="icon"> <ion-icon name="lock-closed-outline"></ion-icon> </span>
+            <span class="icon">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+            </span>
             <span class="title">การกำหนดสิทธิ์</span>
           </router-link>
         </li>
-        <li :class="{hovered : position.first_link}">
+        <li :class="{ hovered: position.first_link }">
           <router-link to="/about" id="nav" @click="FirstLink()">
-            <span class="icon"> <ion-icon name="help-circle-outline"></ion-icon> </span>
+            <span class="icon">
+              <ion-icon name="help-circle-outline"></ion-icon>
+            </span>
             <span class="title">เกี่ยวกับเรา</span>
           </router-link>
         </li>
       </ul>
     </div>
     <!-- top navbar and search bar -->
-    <div class="main" :class="{active : toggle_nav}">
+    <div class="main" :class="{ active: toggle_nav }">
       <div class="topbar">
         <!-- toggle bar -->
         <div class="toggle" @click="ToggleNav()">
@@ -50,42 +60,40 @@
         <!-- search bar -->
         <div class="search">
           <label>
-            <input type="text" placeholder="ค้นหา...">
+            <input type="text" placeholder="ค้นหา..." />
             <ion-icon name="search-outline"></ion-icon>
           </label>
         </div>
         <!-- user image -->
         <div class="user">
-          <img src="./assets/logo.png" alt="Profiles">
+          <img src="./assets/logo.png" alt="Profiles" />
         </div>
       </div>
-      <router-view/>
+      <router-view />
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'Event',
+  name: "Event",
   data() {
     return {
-      /** 
+      /**
        * state of link
-      **/ 
-     toggle_nav: false,
-     position: [
-       {first_link : false},
-       {second_link : false},
-       {third_link : false},
-       {fourth_link : false},
-       {fifth_link : false},
-     ]
-     
-    }
+       **/
+      toggle_nav: false,
+      position: [
+        { first_link: false },
+        { second_link: false },
+        { third_link: false },
+        { fourth_link: false },
+        { fifth_link: false },
+      ],
+    };
   },
   methods: {
-    ToggleNav(){
+    ToggleNav() {
       this.toggle_nav = !this.toggle_nav;
     },
     FirstLink() {
@@ -116,19 +124,18 @@ export default {
       this.position.fourth_link = true;
       this.position.fifth_link = false;
     },
-    FifthLink(){
+    FifthLink() {
       this.position.first_link = false;
       this.position.second_link = false;
       this.position.third_link = false;
       this.position.fourth_link = false;
       this.position.fifth_link = true;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style>
-
 * {
   margin: 0;
   padding: 0;
@@ -148,10 +155,10 @@ body {
   overflow-x: hidden;
 }
 
-.container{
+.container {
   position: relative;
   width: 100%;
-} 
+}
 
 .navigation {
   position: fixed;
@@ -164,17 +171,17 @@ body {
 }
 
 .navigation.active {
-  width: 60px
+  width: 60px;
 }
 
-.navigation ul{
+.navigation ul {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
 }
 
-.navigation ul li{
+.navigation ul li {
   position: relative;
   width: 100%;
   list-style: none;
@@ -183,31 +190,30 @@ body {
 }
 
 .navigation ul li:hover,
-.navigation ul li.hovered{
+.navigation ul li.hovered {
   background: var(--white);
 }
 
-.navigation ul li:nth-child(1){
+.navigation ul li:nth-child(1) {
   margin-bottom: 40px;
   pointer-events: none;
 }
 
-.navigation ul li a{
+.navigation ul li a {
   position: relative;
   display: block;
   width: 100%;
   display: flex;
   text-decoration: none;
   color: var(--white);
-
 }
 
 .navigation ul li:hover a,
-.navigation ul li.hovered a{
+.navigation ul li.hovered a {
   color: var(--blue);
 }
 
-.navigation ul li a .icon{
+.navigation ul li a .icon {
   position: relative;
   display: block;
   min-width: 60px;
@@ -216,11 +222,11 @@ body {
   text-align: center;
 }
 
-.navigation ul li a .icon ion-icon{
+.navigation ul li a .icon ion-icon {
   font-size: 1.75em;
 }
 
-.navigation ul li a .title{
+.navigation ul li a .title {
   position: relative;
   display: block;
   padding: 0px 10px;
@@ -231,8 +237,8 @@ body {
 }
 
 .navigation ul li:hover a::before,
-.navigation ul li.hovered a::before{
-  content: '';
+.navigation ul li.hovered a::before {
+  content: "";
   position: absolute;
   right: 0;
   top: -50px;
@@ -245,8 +251,8 @@ body {
   pointer-events: none;
 }
 .navigation ul li:hover a::after,
-.navigation ul li.hovered a::after{
-  content: '';
+.navigation ul li.hovered a::after {
+  content: "";
   position: absolute;
   right: 0;
   bottom: -50px;
@@ -306,7 +312,7 @@ body {
   width: 100%;
 }
 
-.search label input{
+.search label input {
   width: 100%;
   height: 40px;
   border-radius: 40px;
@@ -347,7 +353,7 @@ body {
   .navigation {
     left: -300px;
   }
-  .navigation.active{
+  .navigation.active {
     width: 300px;
     left: 0;
   }
@@ -355,10 +361,9 @@ body {
     width: 100%;
     left: 0;
   }
-  .main.active{
+  .main.active {
     left: 300px;
   }
-  
 }
 
 /* @media (max-width: 480px){
@@ -390,5 +395,4 @@ body {
     color: var(--white);
   }
 } */
-
 </style>
